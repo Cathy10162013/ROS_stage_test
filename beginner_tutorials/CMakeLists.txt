@@ -200,9 +200,6 @@ include_directories(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(keyboard src/keyboard.cpp)
-target_link_libraries(keyboard ${catkin_LIBRARIES})
-
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
