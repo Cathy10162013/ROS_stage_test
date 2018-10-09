@@ -1,0 +1,19 @@
+<!--   
+  stage_test 
+  - stage_ros
+  - keyboard
+ -->
+<launch>  
+  <arg name="world_file"     default=" $(find beginner_tutorials)/maps/stage/maze.world"/>  
+
+  <node pkg="stage_ros" type="stageros" name="stageros" args="$(arg world_file)">  
+    <param name="base_watchdog_timeout" value="0.5"/>  
+    <remap from="odom" to="odom"/>  
+    <remap from="base_pose_ground_truth" to="base_pose_ground_truth"/>  
+    <remap from="cmd_vel" to="cmd_vel"/>  
+  </node>  
+
+  <node pkg="beginner_tutorials" type="keyboard" name="keyboard">
+  </node>  
+
+</launch>  
